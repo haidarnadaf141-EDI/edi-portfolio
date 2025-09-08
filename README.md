@@ -38,6 +38,11 @@ It demonstrates how raw EDI data is mapped, transformed, and validated into a st
 
 ---
 
+📌 Tested On:
+- IBM Sterling Integrator (example BPM flow)
+- Cleo Clarify (mapping spec alignment)
+- Open-source BOTS EDI translator (Python-based transform)
+
 ## 🚀 How to Run Transformation
 
 1. Clone this repository:
