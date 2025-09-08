@@ -1,0 +1,8 @@
+Segment,Element,Meaning,Target Field,Notes
+BEG,03,Purchase Order Number,OrderID,
+BEG,05,Order Date (CCYYMMDD),OrderDate,Convert to YYYY-MM-DD
+N1,BY/N102,Buyer Name,BuyerName,N1 with BY qualifier
+N1,ST/N102,Ship-To Name,ShipToName,N1 with ST qualifier
+PO1,02,Quantity,Qty,
+PO1,04,Unit Price,Price,
+PO1,106/107 = VP,Item Code,ItemCode,"Find where PO106 == 'VP', take PO107"

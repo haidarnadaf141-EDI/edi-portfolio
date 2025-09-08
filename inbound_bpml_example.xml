@@ -1,0 +1,30 @@
+
+<process name="EDI850_Inbound_Process">
+  <sequence>
+    <operation name="Pickup850">
+      <participant name="FSAdapter"/>
+      <output message="FileSystemInput">
+        <assign to="action">GET</assign>
+        <assign to="FilePath">/inbound/edi/</assign>
+        <assign to="FileName">*.edi</assign>
+      </output>
+      <input message="FileSystemOutput"/>
+    </operation>
+
+    <operation name="Map850">
+      <participant name="Map850_to_FlatFile"/>
+      <input message="MapInput"/>
+      <output message="MapOutput"/>
+    </operation>
+
+    <operation name="PutFlatFile">
+      <participant name="FSAdapter"/>
+      <output message="FileSystemInput">
+        <assign to="action">PUT</assign>
+        <assign to="FilePath">/outbound/erp/</assign>
+        <assign to="FileName">Order_%timestamp%.csv</assign>
+      </output>
+      <input message="FileSystemOutput"/>
+    </operation>
+  </sequence>
+</process>
